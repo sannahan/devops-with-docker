@@ -1,0 +1,9 @@
+#/bin/bash
+
+git clone git@github.com:$1 ./cloned_repository
+
+docker build ./cloned_repository -t $2
+
+docker login
+
+docker push $2
